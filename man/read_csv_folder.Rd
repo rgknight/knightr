@@ -4,7 +4,7 @@
 \alias{read_csv_folder}
 \title{read_csv_folder}
 \usage{
-read_csv_folder(path, pattern = NULL, col_types = NULL)
+read_csv_folder(path, pattern = ".csv", col_types = NULL)
 }
 \arguments{
 \item{path}{path to the folder you want to read}
@@ -19,11 +19,3 @@ Useful if you have a datasource that was broken up into multiple files,
 e.g., one file per year, and you want to combine the files into a single result.
 Returns a list of tibbles (you will do the combining on your own).
 }
-\examples{
-id <- 1:10
-is_id(id)
-}
-\keyword{duplicates,}
-\keyword{id,}
-\keyword{is_id}
-

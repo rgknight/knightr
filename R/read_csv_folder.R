@@ -7,18 +7,15 @@
 #' @param path path to the folder you want to read
 #' @param pattern passthrough pattern for list.files
 #' @param col_types passthrough col_types to read_csv
-#' @keywords duplicates, id, is_id
 #' @export
-#' @examples
-#' id <- 1:10
-#' is_id(id)
-read_csv_folder <- function(path, pattern=NULL, col_types=NULL){
+read_csv_folder <- function(path, pattern=".csv", col_types=NULL){
   files <- list.files(path = path, pattern=pattern)
   list_all <- vector(mode="list", length=length(files))
   names(list_all) <- files
 
   for(i in files) {
-    X <- read_csv(paste(path, i, sep = "/"), col_types = col_types)
+    message(sprintf('Reading file: %s', i))
+    X <- readr::read_csv(paste(path, i, sep = "/"), col_types = col_types)
     X$.src <- i
     list_all[[i]] <- X
   }

@@ -1,11 +1,17 @@
 Package: knightr
 Title: R Functions That Are Useful to Me
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("Ryan", "Knight", email = "ryangknight@gmail.com", role = c("aut", "cre"))
 Description: Little R helper functions that I find useful.
 Depends:
     R (>= 3.3.1)
+Imports:
+    dplyr (>= 0.5.0),
+    lazyeval
+Suggests:
+  testthat,
+  readr
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.1

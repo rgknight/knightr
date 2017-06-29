@@ -10,14 +10,9 @@ is_complete(x)
 \item{x}{The thing to check for completeness}
 }
 \description{
-Check if observations are uniquely identified.
-If there are duplicates, print the number of duplicates.
+Check if observations are never NULL or NA.
 }
 \examples{
 x <- 1:10
 is_complete(x)
 }
-\keyword{duplicates,}
-\keyword{id,}
-\keyword{is_id}
-
