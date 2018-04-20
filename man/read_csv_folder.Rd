@@ -4,7 +4,7 @@
 \alias{read_csv_folder}
 \title{read_csv_folder}
 \usage{
-read_csv_folder(path, pattern = ".csv", col_types = NULL)
+read_csv_folder(path, pattern = ".csv", col_types = NULL, ...)
 }
 \arguments{
 \item{path}{path to the folder you want to read}
@@ -12,6 +12,8 @@ read_csv_folder(path, pattern = ".csv", col_types = NULL)
 \item{pattern}{passthrough pattern for list.files}
 
 \item{col_types}{passthrough col_types to read_csv}
+
+\item{...}{Additional arguements to read_csv}
 }
 \description{
 Read csv for each file in a folder.

@@ -1,6 +1,6 @@
 Package: knightr
 Title: R Functions That Are Useful to Me
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person("Ryan", "Knight", email = "ryangknight@gmail.com", role = c("aut", "cre"))
 Description: Little R helper functions that I find useful.
 Depends:

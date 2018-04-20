@@ -12,7 +12,7 @@
 #' sep_dups(iris, "Sepal.Width", "Sepal.Length")
 get_dups <- function(df, ...){
   vars <- lazyeval::lazy_dots(...)
-  target <- df %>% select_(.dots = vars)
+  target <- dplyr::select_(df, .dots = vars)
   dup_index <- duplicated(target) | duplicated(target, fromLast = TRUE)
 
   df[dup_index, ]
@@ -36,7 +36,7 @@ get_dups <- function(df, ...){
 #' @examples
 #' sep_dups(iris, "Sepal.Width", "Sepal.Length")
 sep_dups <- function(df, ...){
-  target <- df %>% select_(.dots=...)
+  target <- dplyr::select_(df, .dots=...)
   dup_index <- duplicated(target) | duplicated(target, fromLast = TRUE)
 
   list(unique = df[!dup_index, ],
