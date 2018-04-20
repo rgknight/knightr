@@ -7,15 +7,16 @@
 #' @param path path to the folder you want to read
 #' @param pattern passthrough pattern for list.files
 #' @param col_types passthrough col_types to read_csv
+#' @param ... Additional arguements to read_csv
 #' @export
-read_csv_folder <- function(path, pattern=".csv", col_types=NULL){
+read_csv_folder <- function(path, pattern=".csv", col_types=NULL, ...){
   files <- list.files(path = path, pattern=pattern)
   list_all <- vector(mode="list", length=length(files))
   names(list_all) <- files
 
   for(i in files) {
     message(sprintf('Reading file: %s', i))
-    X <- readr::read_csv(paste(path, i, sep = "/"), col_types = col_types)
+    X <- readr::read_csv(paste(path, i, sep = "/"), col_types = col_types, ...)
     X$.src <- i
     list_all[[i]] <- X
   }
